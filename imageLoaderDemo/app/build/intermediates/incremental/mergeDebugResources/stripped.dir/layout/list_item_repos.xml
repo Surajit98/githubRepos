@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                       
+
+    
+
+                 
+                       
+                                                             
+           
+
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="true"
+        app:cardBackgroundColor="@android:color/white"
+        android:padding="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" android:tag="layout/list_item_repos_0" xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="binding_1"    
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toEndOf="@id/txtName"
+                app:layout_constraintTop_toTopOf="@id/txtName" />
+
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+            <TextView
+                android:id="@+id/txtDescI"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="binding_2"           
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toEndOf="@id/txtDesc"
+                app:layout_constraintTop_toTopOf="@id/txtDesc"
+                tools:text="gda kjhdjahd kjbdkjabd kjabdkajd lhds ljnalkd dnla lajdal ljbdalbd"/>
+            <TextView
+                android:id="@+id/txtOpenIssues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/open_issues"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDescI" />
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="binding_3"                          
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toEndOf="@id/txtOpenIssues"
+                app:layout_constraintTop_toTopOf="@id/txtOpenIssues"
+                tools:text="10"/>
+            <TextView
+                android:id="@+id/txtPermission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Permission"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtOpenIssues" />
+
+           <LinearLayout
+               android:id="@+id/permissionLayout"
+               android:layout_marginStart="@dimen/_10sdp"
+               app:layout_constraintTop_toTopOf="@id/txtPermission"
+               app:layout_constraintStart_toEndOf="@id/txtPermission"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:weightSum="1"
+               android:orientation="horizontal">
+               <TextView
+                   android:tag="binding_4"                                                                                                             
+                   android:textColor="@android:color/white"
+                   android:padding="@dimen/_3sdp"
+                   android:background="@drawable/txt_back"
+                   android:textSize="@dimen/_12ssp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Admin"/>
+               <TextView
+                   android:tag="binding_5"                                                                                                            
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@android:color/white"
+                   android:padding="@dimen/_3sdp"
+                   android:background="@drawable/txt_back"
+                   android:textSize="@dimen/_12ssp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Pull"/>
+               <TextView
+                   android:tag="binding_6"                                                                                                            
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@android:color/white"
+                   android:padding="@dimen/_3sdp"
+                   android:background="@drawable/txt_back"
+                   android:textSize="@dimen/_12ssp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Push"/>
+           </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="License"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/permissionLayout" />
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/txtLicense"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_7"                    />
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_8"                      />
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_9"                           />
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_10"                   />
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_11"                          />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+         

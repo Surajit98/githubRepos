@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.sd.app.data.model.ReposResponseItem" />
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="true"
+        app:cardBackgroundColor="@android:color/white"
+        android:padding="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.name}"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toEndOf="@id/txtName"
+                app:layout_constraintTop_toTopOf="@id/txtName" />
+
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+            <TextView
+                android:id="@+id/txtDescI"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.description}"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toEndOf="@id/txtDesc"
+                app:layout_constraintTop_toTopOf="@id/txtDesc"
+                tools:text="gda kjhdjahd kjbdkjabd kjabdkajd lhds ljnalkd dnla lajdal ljbdalbd"/>
+            <TextView
+                android:id="@+id/txtOpenIssues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/open_issues"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDescI" />
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.openIssuesCount.toString()}"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toEndOf="@id/txtOpenIssues"
+                app:layout_constraintTop_toTopOf="@id/txtOpenIssues"
+                tools:text="10"/>
+            <TextView
+                android:id="@+id/txtPermission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Permission"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtOpenIssues" />
+
+           <LinearLayout
+               android:id="@+id/permissionLayout"
+               android:layout_marginStart="@dimen/_10sdp"
+               app:layout_constraintTop_toTopOf="@id/txtPermission"
+               app:layout_constraintStart_toEndOf="@id/txtPermission"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:weightSum="1"
+               android:orientation="horizontal">
+               <TextView
+                   android:backgroundTint="@{safeUnbox(!data.permissions.admin)?@color/material_on_background_disabled:@android:color/holo_green_dark}"
+                   android:textColor="@android:color/white"
+                   android:padding="@dimen/_3sdp"
+                   android:background="@drawable/txt_back"
+                   android:textSize="@dimen/_12ssp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Admin"/>
+               <TextView
+                   android:backgroundTint="@{safeUnbox(!data.permissions.pull)?@color/material_on_background_disabled:@android:color/holo_green_dark}"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@android:color/white"
+                   android:padding="@dimen/_3sdp"
+                   android:background="@drawable/txt_back"
+                   android:textSize="@dimen/_12ssp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Pull"/>
+               <TextView
+                   android:backgroundTint="@{safeUnbox(!data.permissions.push)?@color/material_on_background_disabled:@android:color/holo_green_dark}"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@android:color/white"
+                   android:padding="@dimen/_3sdp"
+                   android:background="@drawable/txt_back"
+                   android:textSize="@dimen/_12ssp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Push"/>
+           </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="License"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/permissionLayout" />
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/txtLicense"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Key :" +data.license.key}'/>
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Name :" +data.license.name}'/>
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Spdx Id :" +data.license.spdxId}'/>
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Url :" +data.license.url}'/>
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Node Id :" +data.license.nodeId}'/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>
